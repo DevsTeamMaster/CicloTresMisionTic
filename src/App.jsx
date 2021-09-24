@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+//import Layout from 'layouts/Layout';
+import Index from 'pages';
+import Bordercollie from 'pages/bordercollie';
+import RhodesianInfoPage from 'pages/rhodesian';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'styles/styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+          <Switch>
+            <Route path='/rhodesian'>
+              <RhodesianInfoPage />
+            </Route>
+            <Route path='/bordercollie'>
+              <Bordercollie />
+            </Route>
+            <Route path='/'>
+              <Index />
+            </Route>
+          </Switch>
+      </Router>
     </div>
   );
 }
