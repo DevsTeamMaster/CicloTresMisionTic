@@ -4,9 +4,9 @@ import Bordercollie from 'pages/bordercollie';
 import RhodesianInfoPage from 'pages/rhodesian';
 import Login from 'pages/login';
 import Register from 'pages/register';
+import Sales from 'pages/sales';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/styles.scss';
-
 
 //Libreria FontAwesome
 import ReactDOM from 'react-dom'
@@ -32,6 +32,9 @@ function App(){
             </Route>
             <Route path='/Register'>
               <Register/>
+            </Route>
+            <Route path='/Sales'>
+              <Sales/>
             </Route>
             <Route path='/'>
               <Login/>
