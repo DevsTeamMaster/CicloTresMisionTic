@@ -23,7 +23,7 @@ function Register() {
                                 <i class="fas fa-mobile-alt"></i>        
                             </div>
                             <div>
-                                <input type="number" placeholder="Email" id="email"/>  
+                                <input type="number" placeholder="Telefono" id="email" />  
                             </div>          
                         </div>
                         <div class="inputBx"> 
@@ -31,14 +31,22 @@ function Register() {
                                 <i class="fas fa-key"></i>   
                             </div>
                             <div>
-                                <input type="password" placeholder="Email" id="email"/>  
+                                <input type="password" placeholder="Contraseña" id="email"/>  
                             </div>          
                         </div>
-                        <div class="inputBx boton">
-                            <input class="boton" type="submit" value="Register" onclick="getData()"/>
-                        </div>
+                      
+
+                    <div className="boton-padre">
+                    <div className="btn-hijo">
+                         <button className="login-btn">
+                            <span>Register</span>
+                         </button>
+                    </div>
+          </div>
                     </form>
-                    <p class="p"><Link to='/Login'> Back To Login </Link></p>
+                    <Link to='/Login'> <div className="p">
+                <span ><h3>Back to Login</h3></span>   
+            </div> </Link>  
             </div>
         </div>
   </section>
