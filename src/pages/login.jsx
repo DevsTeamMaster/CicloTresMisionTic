@@ -6,7 +6,6 @@ import logo from 'media/logo.png'
 import { BiLockAlt } from "react-icons/bi";
 import lock from 'media/lock.png'
 
-
 //Importamos libreria FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
@@ -41,9 +40,15 @@ function Login() {
           </div>
           <div className="boton-padre">
               <div className="btn-hijo">
-                <button className="login-btn">
-                    <span>Login</span>
+              
+              <button className="login-btn"> 
+              <Link to="/NavBar">
+              <div>
+              <span>Login</span>
+              </div>
+              </Link>
                 </button>
+           
             </div>
           </div>
           <div className="boton-padre">
