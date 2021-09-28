@@ -5,7 +5,7 @@ import RhodesianInfoPage from 'pages/rhodesian';
 import Login from 'pages/login';
 import Register from 'pages/register';
 import Sales from 'pages/sales';
-import Navbar from 'components/Navbar';
+import Layout from 'layout/Layout';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/styles.scss';
 
@@ -24,9 +24,6 @@ function App(){
           <Switch>
             <Route path='/rhodesian'>
               <RhodesianInfoPage/>
-            </Route>
-            <Route path='/Navbar'>
-              <Navbar/>
             </Route>
             <Route path='/bordercollie'>
               <Bordercollie/>

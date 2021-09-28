@@ -4,10 +4,12 @@ import 'index.js';
 import imagenUsuario from 'media/perfil.jpg'
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {    
+const Navbar = () => {   
+
     return (
-        <div className="body">
-        <header class="header">
+        <div>
+            <div className="body">     
+             <header class="header">
             <div class="header__container">
                 <img src={imagenUsuario} alt="" class="header__img"/>
 
@@ -102,8 +104,9 @@ const Navbar = () => {
                 </a>
             </nav>
         </div>
-        <div className="contenedor-principal">
+        {/*<div className="contenedor-principal">
           
+    </div> */}
         </div>
     </div>
     )
