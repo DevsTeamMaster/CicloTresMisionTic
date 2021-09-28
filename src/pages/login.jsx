@@ -1,11 +1,9 @@
 import 'styles/login.scss';
 import { Link } from 'react-router-dom';
 import logo from 'media/logo.png'
-
 //Libreria react para utilizar los iconos
 import { BiLockAlt } from "react-icons/bi";
 import lock from 'media/lock.png'
-
 //Importamos libreria FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
@@ -13,8 +11,10 @@ import React from 'react'
 
 
 function Login() {
+
+
   return (
-    <section class="login">
+    <section class="login"> 
     <div class="box">
       <div class="form">
           <div className = "logo">
@@ -42,7 +42,7 @@ function Login() {
               <div className="btn-hijo">
               
               <button className="login-btn"> 
-              <Link to="/NavBar">
+              <Link to="/sales">
               <div>
               <span>Login</span>
               </div>
