@@ -116,7 +116,8 @@ const Navbar = () => {
             </a>
           </nav>
         </div>
-        <div className="contenedor-principal"></div>
+       {/* <div className="contenedor-principal"></div> 
+        */} 
       </div>
     </div>
   );
