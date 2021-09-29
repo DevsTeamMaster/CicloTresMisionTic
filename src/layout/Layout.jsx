@@ -116,7 +116,11 @@ const Layout = ({ children }) => {
             </a>
           </nav>
         </div>
-        <div className="contenedor-principal">{children}</div>
+        <>
+        {children}
+        </>
+
+        {/*<div className="contenedor-principal">{children}</div> */}
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-import "styles/styles.scss";
+import "styles/addSales.scss";
 
 import React from "react";
 
 const AddSales = () => {
   return (
-    <div class="bg-black mx-auto max-w-6xl bg-black py-20 lg:px-24 shadow-xl mb-24">
-      <form class="flex justify-center">
-        <div class="bg-white shadow-md rounded px-10 py-10 flex flex-col md:w-3/4">
+    <div className="div-form">
+      <form class="flex justify-center w-max padre">
+        <div class=" bg-white  flex flex-col form-sales" >
           <div class="mt-1">
             <h1 class="uppercase tracking-wide text-black font-bold text-xl text-center">
               - Panel de ventas -
@@ -141,24 +141,26 @@ const AddSales = () => {
           </div>
 
           <div class="-mx-3 md:flex justify-start">
-            <div class="mx-7 md:w-1/4 px-3 mb-10 md:mb-0">
-              <label class="uppercase tracking-wide text-black text-xs font-bold mb-2">
-                Cantidad vendida*
-              </label>
-              <input
-                class="w-40 bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                type="text"
-                placeholder="#"
-              />
+          <div class="md:flex mb-6">
+              <div class="mx-7 md:w-3/5 px-3 mb-10 md:mb-0">
+                <label class="uppercase tracking-wide text-black text-xs font-bold mb-2">
+                  Cantidad Vendida*
+                </label>
+                <input
+                  class="w-44 bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                  type="text"
+                  placeholder="$"
+                />
+              </div>
             </div>
 
             <div class="md:flex mb-6">
-              <div class="mx-7 md:w-1/4 px-3 mb-10 md:mb-0">
+              <div class="mx-7 md:w-3/5 px-3 mb-10 md:mb-0">
                 <label class="uppercase tracking-wide text-black text-xs font-bold mb-2">
-                  Impuesto*
+                  Impuesto (IVA%)*
                 </label>
                 <input
-                  class="w-20 bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                  class="w-44 bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
                   type="text"
                   placeholder="$"
                 />
@@ -178,14 +180,12 @@ const AddSales = () => {
               </div>
             </div>
           </div>
-
-          <div class="-mx-3 md:flex mt-2">
-            <div class="md:w-full px-3">
-              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full">
+          <div class="md:w-full px-3">
+              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-1 border-gray-600 hover:border-gray-100 rounded-full btn-sales">
                 Agregar
               </button>
             </div>
-          </div>
+
         </div>
       </form>
     </div>
