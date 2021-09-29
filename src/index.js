@@ -11,10 +11,18 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+
 /*const showMenu = (headerToggle, navbarId) =>{
   const toggleBtn = document.getElementById(headerToggle),
   nav = document.getElementById(navbarId)
   
+
+  if(toggleBtn == null || nav == null ){
+
+    return
+
+  }
   // Validate that variables exist
   if(headerToggle && navbarId){
       toggleBtn.addEventListener('click', ()=>{
@@ -36,6 +44,8 @@ function colorLink(){
 }
 
 linkColor.forEach(l => l.addEventListener('click', colorLink))*/
+
+
 
 
 // If you want to start measuring performance in your app, pass a function

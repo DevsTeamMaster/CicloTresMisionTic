@@ -1,10 +1,10 @@
-import React from "react";
-import "styles/navBar.scss";
-import "index.js";
+import React, { Children } from "react";
 import imagenUsuario from "media/perfil.jpg";
 import { Link } from "react-router-dom";
+import "styles/sales.scss";
+//import Navbar from 'components/Navbar'
 
-const Navbar = () => {
+const Layout = ({ children }) => {
   return (
     <div>
       <div className="body">
@@ -116,10 +116,10 @@ const Navbar = () => {
             </a>
           </nav>
         </div>
-        <div className="contenedor-principal"></div>
+        <div className="contenedor-principal">{children}</div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default Layout;
