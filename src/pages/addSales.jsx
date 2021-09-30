@@ -180,8 +180,8 @@ const AddSales = () => {
               </div>
             </div>
           </div>
-          <div class="md:w-full px-3">
-              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-1 border-gray-600 hover:border-gray-100 rounded-full btn-sales">
+          <div class="md:w-full px-3 btn-sales">
+              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-1 border-gray-600 hover:border-gray-100 rounded-full ">
                 Agregar
               </button>
             </div>

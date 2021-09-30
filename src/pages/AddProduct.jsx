@@ -1,9 +1,10 @@
 import React from 'react';
-import 'styles/addSales.scss';
+import 'styles/addProduct.scss';
 
 const AddProduct = () => {
   return (
-    <div className='flex flex-col h-screen items-center justify-center border-gray-800 border rounded-3xl mt-5 ml-5 bg-gradient-to-r from-gray-200 via-white to-gray-200'>
+    <div className="product-container">
+    <div className='flex flex-col h-screen items-center justify-center  rounded-3xl mt-5 ml-5 bg-gradient-to-r  product-div'>
       <div className='flex flex-col bg-gray-100 shadow-2xl border border-gray-300 rounded-xl px-52 pt-10 my-10'>
         <h1 className='flex justify-center font-bold text-2xl text-gray-800'>
           Agregar producto
@@ -77,9 +78,9 @@ const AddProduct = () => {
             </label>
           </div>
 
-          <div className='flex flex-col items-end'>
+          <div className='flex flex-col items-end '>
             <button
-              className='flex mt-5 bg-gradient-to-r from-black to-blue-900 border border-gray-900 rounded-full py-2 px-8 font-bold text-white shadow-2xl hover:bg-gray-800'
+              className='btn-agregar flex mt-5 bg-gradient-to-r   rounded-full py-2 px-8 font-bold text-white shadow-2x'
               type='submit'
             >
               Agregar
@@ -88,7 +89,9 @@ const AddProduct = () => {
         </form>
       </div>
     </div>
+    </div>
   );
+  
 };
 
 export default AddProduct;
