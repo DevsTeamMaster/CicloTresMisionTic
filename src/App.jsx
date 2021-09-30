@@ -7,7 +7,7 @@ import Register from 'pages/register';
 import Sales from 'pages/sales';
 import Navbar from 'components/Navbar';
 import AddSales from 'pages/addSales';
-import AddProduct from 'pages/AddProduct';
+import AddProduct from 'pages/addProduct';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/styles.scss';
 
@@ -71,8 +71,11 @@ function App() {
               </Switch>
             </Layout>
           </Route>
-          <Route path={['/']}>
+          <Route path={['/', '/Register']}>
             <Switch>
+              <Route path='/Register'>
+                <Register />
+              </Route>
               <Route path='/'>
                 <Login />
               </Route>
