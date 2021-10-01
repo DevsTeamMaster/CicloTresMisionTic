@@ -1,10 +1,201 @@
-import "styles/addSales.scss";
+import 'styles/addSales.scss';
 
-import React from "react";
+import React from 'react';
 
 const AddSales = () => {
   return (
-    <div className="div-form">
+    <div className='product-container'>
+      <div className='md:flex flex-col h-screen items-center justify-center rounded-3xl ml-5 mt-5 product-div'>
+        <div className='flex flex-col bg-gray-100 shadow-2xl border border-gray-300 rounded-xl px-52'>
+          <h1 className='flex justify-center font-bold text-2xl text-gray-800 p-2'>
+            Agregar venta
+          </h1>
+          <form className='flex flex-col mt-10 mb-5'>
+            <div className='md:flex justify-between mb-2'>
+              <label
+                className='-mt-8 md:flex flex-col font-bold text-gray-800'
+                htmlFor='fecha'
+              >
+                Fecha
+                <input
+                  className='flex w-48 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='fecha'
+                  type='date'
+                  required
+                ></input>
+              </label>
+              <label
+                className='-mt-8 md:flex flex-col font-bold text-gray-800'
+                htmlFor='IDVenta'
+              >
+                ID venta
+                <input
+                  className='flex w-20 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='IDVenta'
+                  type='text'
+                  placeholder='#'
+                  required
+                ></input>
+              </label>
+            </div>
+            <hr />
+            <div className='md:flex justify-between mt-2'>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='código'
+              >
+                Código producto
+                <input
+                  className='flex w-32 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2 mr-10'
+                  name='codigo'
+                  type='text'
+                  placeholder='SKU'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='precio'
+              >
+                Precio
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='precio'
+                  type='number'
+                  placeholder='$'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='cantidad'
+              >
+                Cantidad
+                <input
+                  className='flex w-16 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='cantidad'
+                  type='number'
+                  placeholder='#'
+                  required
+                ></input>
+              </label>
+            </div>
+            <div className='flex my-2'>
+              <label className='flex font-bold text-gray-800' htmlFor='total'>
+                Total
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='total'
+                  type='number'
+                  placeholder='$'
+                  required
+                ></input>
+              </label>
+            </div>
+            <hr />
+            <h1 className='flex justify-start mt-2 font-bold text-xl text-gray-800'>
+              Datos cliente
+            </h1>
+            <div className='md:flex my-2'>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='IDCliente'
+              >
+                ID cliente
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='IDCliente'
+                  type='text'
+                  placeholder='ID'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='nombres'
+              >
+                Nombres
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='nombres'
+                  type='text'
+                  placeholder='Nombres'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='apellidos'
+              >
+                Apellidos
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='apellidos'
+                  type='text'
+                  placeholder='Apellidos'
+                  required
+                ></input>
+              </label>
+            </div>
+            <hr />
+            <h1 className='flex justify-start mt-2 font-bold text-xl text-gray-800'>
+              Datos vendedor
+            </h1>
+            <div className='md:flex mt-2'>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='IDVendedor'
+              >
+                ID vendedor
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='IDVendedor'
+                  type='text'
+                  placeholder='ID'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='nombres'
+              >
+                Nombres
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='nombres'
+                  type='text'
+                  placeholder='Nombres'
+                  required
+                ></input>
+              </label>
+              <label
+                className='flex flex-col font-bold text-gray-800'
+                htmlFor='apellidos'
+              >
+                Apellidos
+                <input
+                  className='flex w-40 bg-gray-50 border border-blue-900 p-1 rounded-lg m-2'
+                  name='apellidos'
+                  type='text'
+                  placeholder='Apellidos'
+                  required
+                ></input>
+              </label>
+            </div>
+            <div className='flex flex-col'>
+              <button
+                className='flex justify-center mt-5 w-full rounded-full py-2 px-8 font-bold text-white shadow-2x bg-purple-600 hover:bg-purple-900'
+                type='submit'
+              >
+                Agregar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    /*<div className="div-form">
       <form class="flex justify-center w-max padre">
         <div class=" bg-white  flex flex-col form-sales" >
           <div class="mt-1">
@@ -180,15 +371,15 @@ const AddSales = () => {
               </div>
             </div>
           </div>
-          <div class="md:w-full px-3">
-              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-1 border-gray-600 hover:border-gray-100 rounded-full btn-sales">
+          <div class="md:w-full px-3 btn-sales">
+              <button class="mb-1 md:w-full bg-gray-700 text-white font-bold py-2 px-4 border-b-4 hover:border-b-1 border-gray-600 hover:border-gray-100 rounded-full ">
                 Agregar
               </button>
             </div>
 
         </div>
       </form>
-    </div>
+  </div>*/
   );
 };
 
