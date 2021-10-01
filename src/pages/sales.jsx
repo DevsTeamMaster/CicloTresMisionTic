@@ -7,38 +7,38 @@ const sales = () => {
     return (
         <div>
         <div className="body">     
-         <header class="header">
+         <header className="header">
         <div class="header__container">
-            <img src={imagenUsuario} alt="" class="header__img"/>
+            <img src={imagenUsuario} alt="" className="header__img"/>
 
-            <Link class="header__logo">DevsTeamMaster</Link>
+            <Link className="header__logo">DevsTeamMaster</Link>
 
             <div class="header__search">
-                <input type="search" placeholder="Search" class="header__input"/>
-                <i class='bx bx-search header__icon'></i>
+                <input type="search" placeholder="Search" className="header__input"/>
+                <i className='bx bx-search header__icon'></i>
             </div>
 
-            <div class="header__toggle">
-                <i class='bx bx-menu' id="header-toggle"></i>
+            <div className="header__toggle">
+                <i className='bx bx-menu' id="header-toggle"></i>
             </div>
         </div>
     </header>
 
-    <div class="nav" id="navbar">
-        <nav class="nav__container">
+    <div className="nav" id="navbar">
+        <nav className="nav__container">
             <div>
-                <a href="#" class="nav__link nav__logo">
-                    <i class="fab fa-github-alt  nav__icon"></i>
-                    <span class="nav__logo-name">MisionTic2021</span>
+                <a href="#" className="nav__link nav__logo">
+                    <i className="fab fa-github-alt  nav__icon"></i>
+                    <span className="nav__logo-name">MisionTic2021</span>
                 </a>
 
-                <div class="nav__list">
-                    <div class="nav__items">
-                        <h3 class="nav__subtitle">Profile</h3>
+                <div className="nav__list">
+                    <div className="nav__items">
+                        <h3 className="nav__subtitle">Profile</h3>
 
-                        <a href="#" class="nav__link active">
-                            <i class='bx bx-home nav__icon' ></i>
-                            <span class="nav__name">Home</span>
+                        <a href="#" className="nav__link active">
+                            <i className='bx bx-home nav__icon' ></i>
+                            <span className="nav__name">Home</span>
                         </a>
                         
                         <div class="nav__dropdown">
@@ -57,46 +57,46 @@ const sales = () => {
                             </div>
                         </div>
 
-                        <a href="#" class="nav__link">
-                            <i class='bx bx-message-rounded nav__icon' ></i>
-                            <span class="nav__name">Messages</span>
+                        <a href="#" className="nav__link">
+                            <i className='bx bx-message-rounded nav__icon' ></i>
+                            <span className="nav__name">Messages</span>
                         </a>
                     </div>
 
-                    <div class="nav__items">
-                        <h3 class="nav__subtitle">Menu</h3>
+                    <div className="nav__items">
+                        <h3 className="nav__subtitle">Menu</h3>
 
-                        <div class="nav__dropdown">
-                            <a href="#" class="nav__link">
-                                <i class='bx bx-bell nav__icon' ></i>
-                                <span class="nav__name">Notifications</span>
-                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        <div className="nav__dropdown">
+                            <a href="#" className="nav__link">
+                                <i className='bx bx-bell nav__icon' ></i>
+                                <span className="nav__name">Notifications</span>
+                                <i className='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
                             </a>
 
-                            <div class="nav__dropdown-collapse">
-                                <div class="nav__dropdown-content">
-                                    <a href="#" class="nav__dropdown-item">Blocked</a>
-                                    <a href="#" class="nav__dropdown-item">Silenced</a>
-                                    <a href="#" class="nav__dropdown-item">Publish</a>
-                                    <a href="#" class="nav__dropdown-item">Program</a>
+                            <div className="nav__dropdown-collapse">
+                                <div className="nav__dropdown-content">
+                                    <a href="#" className="nav__dropdown-item">Blocked</a>
+                                    <a href="#" className="nav__dropdown-item">Silenced</a>
+                                    <a href="#" className="nav__dropdown-item">Publish</a>
+                                    <a href="#" className="nav__dropdown-item">Program</a>
                                 </div>
                             </div>
 
                         </div>
 
-                        <a href="#" class="nav__link">
+                        <a href="#" className="nav__link">
                             <i class='bx bx-compass nav__icon' ></i>
-                            <span class="nav__name">Explore</span>
+                            <span className="nav__name">Explore</span>
                         </a>
-                        <a href="#" class="nav__link">
+                        <a href="#" className="nav__link">
                             <i class='bx bx-bookmark nav__icon' ></i>
-                            <span class="nav__name">Saved</span>
+                            <span className="nav__name">Saved</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <a href="#" class="nav__link nav__logout">
+            <a href="#" className="nav__link nav__logout">
                 <i class='bx bx-log-out nav__icon' ></i>
                 <span class="nav__name">Log Out</span>
             </a>

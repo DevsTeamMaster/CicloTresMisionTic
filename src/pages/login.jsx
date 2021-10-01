@@ -13,25 +13,25 @@ import React from 'react'
 function Login() {
 
   return (
-    <section class="login"> 
-    <div class="box">
-      <div class="form">
+    <section className="login"> 
+    <div className="box">
+      <div className="form">
           <div className = "logo">
                   <img src={logo} alt="" />            
           </div>
         <h2>Login</h2>
         <form action="">
-          <div class="inputBx"> 
+          <div className="inputBx"> 
             <div className="google-icon">
-                <i class="fas fa-user"></i>          
+                <i className="fas fa-user"></i>          
             </div>
             <div>
             <input type="email" placeholder="Email" id="email"/>  
             </div>          
           </div>
-          <div class="inputBx"> 
+          <div className="inputBx"> 
             <div className="google-icon">
-                <i class="fas fa-lock"></i>           
+                <i className="fas fa-lock"></i>           
             </div>
             <div>
             <input type="password" placeholder="Contraseña" id="email"/>  
@@ -41,7 +41,7 @@ function Login() {
               <div className="btn-hijo">
               
               <button className="login-btn"> 
-              <Link to="/sales">
+              <Link to="/addsales">
               <div>
               <span>Login</span>
               </div>

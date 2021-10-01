@@ -59,6 +59,9 @@ function App() {
 
       <Router>
         <Switch>
+           <Route path='/sales'>
+                <Sales/>
+            </Route>
           <Route path={['/AddSales', '/AddProduct']}>
             <Layout>
               <Switch>
@@ -81,6 +84,7 @@ function App() {
               </Route>
             </Switch>
           </Route>
+         
         </Switch>
       </Router>
     </div>
