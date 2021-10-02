@@ -12,7 +12,7 @@ function Register() {
                     <form action="">
                         <div class="inputBx"> 
                             <div className="google-icon">
-                                <i class="fas fa-at"></i>             
+                                <i className="fas fa-at"></i>             
                             </div>
                             <div>
                                 <input type="email" placeholder="Email" id="email"/>  

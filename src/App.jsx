@@ -8,6 +8,7 @@ import Sales from 'pages/sales';
 import Navbar from 'components/Navbar';
 import AddSales from 'pages/addSales';
 import AddProduct from 'pages/addProduct';
+import MaestroUsuario from 'pages/maestroUsuario';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/styles.scss';
 
@@ -59,7 +60,7 @@ function App() {
 
       <Router>
         <Switch>
-          <Route path={['/AddSales', '/AddProduct']}>
+          <Route path={['/AddSales', '/AddProduct','/MaestroUsuario']}>
             <Layout>
               <Switch>
                 <Route path='/AddSales'>
@@ -67,12 +68,15 @@ function App() {
                 </Route>
                 <Route path='/AddProduct'>
                   <AddProduct />
-                </Route>
-              </Switch>
+                </Route>  
+                <Route path='/MaestroUsuario'>
+                  <MaestroUsuario />
+                </Route>           
+              </Switch>           
             </Layout>
           </Route>
           <Route path={['/', '/Register']}>
-            <Switch>
+            <Switch>          
               <Route path='/Register'>
                 <Register />
               </Route>

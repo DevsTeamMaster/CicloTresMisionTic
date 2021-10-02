@@ -24,7 +24,7 @@ const sales = () => {
         </div>
     </header>
 
-    <div class="nav" id="navbar">
+    <div className="nav" id="navbar">
         <nav class="nav__container">
             <div>
                 <a href="#" class="nav__link nav__logo">

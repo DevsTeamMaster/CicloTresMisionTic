@@ -38,7 +38,7 @@ const AddSales = () => {
                 ></input>
               </label>
             </div>
-            <hr />
+            <hr className="border-gray-700"/>
             <div className='md:flex justify-between mt-2'>
               <label
                 className='flex flex-col font-bold text-gray-800'
@@ -92,7 +92,7 @@ const AddSales = () => {
                 ></input>
               </label>
             </div>
-            <hr />
+            <hr className="border-gray-700" />
             <h1 className='flex justify-start mt-2 font-bold text-xl text-gray-800'>
               Datos cliente
             </h1>
@@ -137,7 +137,7 @@ const AddSales = () => {
                 ></input>
               </label>
             </div>
-            <hr />
+            <hr className="border-gray-700" />
             <h1 className='flex justify-start mt-2 font-bold text-xl text-gray-800'>
               Datos vendedor
             </h1>
@@ -182,9 +182,9 @@ const AddSales = () => {
                 ></input>
               </label>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-col '>
               <button
-                className='flex justify-center mt-5 w-full rounded-full py-2 px-8 font-bold text-white shadow-2x bg-purple-600 hover:bg-purple-900'
+                className='flex justify-center cursor-pointer ring-4 ring-indigo-300  mt-5 w-full rounded-full py-2 px-8 font-bold text-white shadow-2x bg-purple-600 hover:bg-purple-900'
                 type='submit'
               >
                 Agregar
