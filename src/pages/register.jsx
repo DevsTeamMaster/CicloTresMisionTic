@@ -10,7 +10,7 @@ function Register() {
             <div className="form">
                 <h2>Register</h2>
                     <form action="">
-                        <div class="inputBx"> 
+                        <div className="inputBx"> 
                             <div className="google-icon">
                                 <i className="fas fa-at"></i>             
                             </div>
@@ -18,17 +18,17 @@ function Register() {
                                 <input type="email" placeholder="Email" id="email"/>  
                             </div>          
                         </div>
-                        <div class="inputBx"> 
+                        <div className="inputBx"> 
                             <div className="google-icon">
-                                <i class="fas fa-mobile-alt"></i>        
+                                <i className="fas fa-mobile-alt"></i>        
                             </div>
                             <div>
                                 <input type="number" placeholder="Telefono" id="email" />  
                             </div>          
                         </div>
-                        <div class="inputBx"> 
+                        <div className="inputBx"> 
                             <div className="google-icon">
-                                <i class="fas fa-key"></i>   
+                                <i className="fas fa-key"></i>   
                             </div>
                             <div>
                                 <input type="password" placeholder="Contraseña" id="email"/>  
