@@ -33,12 +33,12 @@ const Navbar = () => {
                 <span class="nav__logo-name">MisionTic2021</span>
               </a>
 
-              <div class="nav__list">
+              <div class="nav__list ">
                 <div class="nav__items">
                   <h3 class="nav__subtitle">Profile</h3>
 
                   <a href="#" class="nav__link active">
-                    <i class="bx bx-home nav__icon"></i>
+                    <i class="bx bx-home nav__icon "></i>
                     <span class="nav__name">Home</span>
                   </a>
 

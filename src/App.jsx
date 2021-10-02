@@ -12,7 +12,16 @@ import IntMastProd from 'pages/intMastProd';
 import Navbar from 'components/Navbar';
 import AddSales from 'pages/addSales';
 import AddProduct from 'pages/addProduct';
+<<<<<<< HEAD
 import MasterSales from 'pages/masterSales';
+=======
+<<<<<<< HEAD
+import MaestroUsuario from 'pages/maestroUsuario';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'styles/styles.scss';
+=======
+>>>>>>> 69758413fc18f8dea95bf0eea93cb451f475aa10
+>>>>>>> 067adda5a27dc57dc03e6b6ad8d2383ead28e598
 
 //Libreria FontAwesome
 import ReactDOM from 'react-dom';
@@ -62,9 +71,17 @@ function App() {
 
       <Router>
         <Switch>
+<<<<<<< HEAD
           <Route
             path={['/AddSales', '/AddProduct', '/IntMastProd', '/MasterSales']}
           >
+=======
+<<<<<<< HEAD
+          <Route path={['/AddSales', '/AddProduct','/MaestroUsuario']}>
+=======
+          <Route path={['/AddSales', '/AddProduct','/IntMastProd']}>
+>>>>>>> 69758413fc18f8dea95bf0eea93cb451f475aa10
+>>>>>>> 067adda5a27dc57dc03e6b6ad8d2383ead28e598
             <Layout>
               <Switch>
                 <Route path='/AddSales'>
@@ -72,6 +89,13 @@ function App() {
                 </Route>
                 <Route path='/AddProduct'>
                   <AddProduct />
+<<<<<<< HEAD
+                </Route>  
+                <Route path='/MaestroUsuario'>
+                  <MaestroUsuario />
+                </Route>           
+              </Switch>           
+=======
                 </Route>
                 <Route path='/IntMastProd'>
                   <IntMastProd />
@@ -80,10 +104,11 @@ function App() {
                   <MasterSales />
                 </Route>
               </Switch>
+>>>>>>> 69758413fc18f8dea95bf0eea93cb451f475aa10
             </Layout>
           </Route>
           <Route path={['/', '/Register']}>
-            <Switch>
+            <Switch>          
               <Route path='/Register'>
                 <Register />
               </Route>
