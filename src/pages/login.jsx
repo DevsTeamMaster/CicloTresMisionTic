@@ -41,7 +41,7 @@ function Login() {
               <div className="btn-hijo">
               
               <button className="login-btn"> 
-              <Link to="/addsales">
+              <Link to="/MasterUser">
               <div>
               <span>Login</span>
               </div>
@@ -60,7 +60,7 @@ function Login() {
         </form>
         <Link to='/Register'> <div className="p">
                 <span ><h3>Registrarse</h3></span>   
-            </div> </Link>          
+        </div> </Link>                 
       </div>
     </div>
   </section>
