@@ -1,4 +1,3 @@
-
 import 'styles/intMastProd.scss';
 import React from 'react'
 import 'styles/addProduct.scss'
@@ -27,6 +26,6 @@ const intMastProd = () => {
       </div>
     </div>
   );
-}
+};
 
-export default intMastProd 
+export default intMastProd;
