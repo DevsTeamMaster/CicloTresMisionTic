@@ -72,6 +72,8 @@ const Layout = ({ children }) => {
                           Accounts
                         </a>*/}
                       </div>
+                      
+                      
                     </div>
                   </div>
 
@@ -80,7 +82,13 @@ const Layout = ({ children }) => {
                     <span class="nav__name">Messages</span>
                       </a>*/}
                 </div>
-
+                <div>
+                    <Link to="/IntMastProd" class="nav__link">
+                    <i class="fas fa-box nav__icon"></i>
+                    <span class="nav__logo-name ">Productos</span>
+                    </Link>              
+                  </div>
+      
                 <div class="nav__items admin">
                   <h3 class="nav__subtitle">Admin</h3>
 
