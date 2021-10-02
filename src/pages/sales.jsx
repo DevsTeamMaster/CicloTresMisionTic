@@ -25,11 +25,7 @@ const sales = () => {
     </header>
 
     <div className="nav" id="navbar">
-<<<<<<< HEAD
         <nav class="nav__container">
-=======
-        <nav className="nav__container">
->>>>>>> 69758413fc18f8dea95bf0eea93cb451f475aa10
             <div>
                 <a href="#" className="nav__link nav__logo">
                     <i className="fab fa-github-alt  nav__icon"></i>

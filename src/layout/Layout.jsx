@@ -28,55 +28,66 @@ const Layout = ({ children }) => {
         <div class="nav" id="navbar">
           <nav class="nav__container">
             <div>
-              <a href="#" class="nav__link nav__logo">
-                <i class="fab fa-github-alt  nav__icon"></i>
+              <a href="https://trello.com/b/woQFw4FX/sprint2" target="_blank" class="nav__link nav__logo admin-header">
+                <i class="fab fa-trello  nav__icon"></i>
                 <span class="nav__logo-name">MisionTic2021</span>
               </a>
 
-              <div class="nav__list">
+              <div class="nav__list admin" >
                 <div class="nav__items">
-                  <h3 class="nav__subtitle">Profile</h3>
-
-                  <a href="#" class="nav__link active">
-                    <i class="bx bx-home nav__icon"></i>
-                    <span class="nav__name">Home</span>
-                  </a>
+                  <h3 class="nav__subtitle">Registrar</h3>
 
                   <div class="nav__dropdown">
-                    <a href="#" class="nav__link">
-                      <i class="bx bx-user nav__icon"></i>
-                      <span class="nav__name">Profile</span>
+                    <Link to="/AddProduct" class="nav__link">
+                    <i class="fas fa-archive nav__icon"></i>
+                      <span class="nav__name">RegistroProduct</span>
                       <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
-                    </a>
+                    </Link>
 
                     <div class="nav__dropdown-collapse">
                       <div class="nav__dropdown-content">
-                        <a href="#" class="nav__dropdown-item">
-                          Passwords
-                        </a>
-                        <a href="#" class="nav__dropdown-item">
-                          Mail
-                        </a>
-                        <a href="#" class="nav__dropdown-item">
-                          Accounts
-                        </a>
+                        <Link to="/MasterProducts" class="nav__dropdown-item">
+                          MaestroProductos
+                        </Link>
                       </div>
                     </div>
                   </div>
 
-                  <a href="#" class="nav__link">
+                  <div class="nav__dropdown">
+                    <Link to="/addSales" class="nav__link">
+                    <i class="fas fa-receipt nav__icon"></i>
+                      <span class="nav__name">RegistroVentas</span>
+                      <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+                    </Link>
+
+                    <div class="nav__dropdown-collapse">
+                      <div class="nav__dropdown-content">
+                        <Link to="MasterSales" class="nav__dropdown-item">
+                          MaestroVentas
+                        </Link>
+                        {/*<a href="#" class="nav__dropdown-item">
+                          Mail
+                        </a>
+                        <a href="#" class="nav__dropdown-item">
+                          Accounts
+                        </a>*/}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/*<a href="#" class="nav__link">
                     <i class="bx bx-message-rounded nav__icon"></i>
                     <span class="nav__name">Messages</span>
-                  </a>
+                      </a>*/}
                 </div>
 
-                <div class="nav__items">
-                  <h3 class="nav__subtitle">Menu</h3>
+                <div class="nav__items admin">
+                  <h3 class="nav__subtitle">Admin</h3>
 
-                  <div class="nav__dropdown">
+                 {/* <div class="nav__dropdown">
                     <a href="#" class="nav__link">
                       <i class="bx bx-bell nav__icon"></i>
-                      <span class="nav__name">Notifications</span>
+                      <span class="nav__name">MaestroUsuarios</span>
                       <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
                     </a>
 
@@ -96,24 +107,24 @@ const Layout = ({ children }) => {
                         </a>
                       </div>
                     </div>
-                  </div>
+                    </div>*/}
 
-                  <a href="#" class="nav__link">
-                    <i class="bx bx-compass nav__icon"></i>
-                    <span class="nav__name">Explore</span>
-                  </a>
-                  <a href="#" class="nav__link">
+                  <Link to="/MasterUser" class="nav__link">
+                     <i class="fas fa-chess-king nav__icon"></i>
+                    <span class="nav__name">MaestroUsuarios</span>
+                  </Link>
+                  {/*<a href="#" class="nav__link">
                     <i class="bx bx-bookmark nav__icon"></i>
                     <span class="nav__name">Saved</span>
-                  </a>
+                  </a>*/}
                 </div>
               </div>
             </div>
 
-            <a href="#" class="nav__link nav__logout">
+            <Link to="/Login" class="nav__link nav__logout">
               <i class="bx bx-log-out nav__icon"></i>
               <span class="nav__name">Log Out</span>
-            </a>
+            </Link>
           </nav>
         </div>
         <>

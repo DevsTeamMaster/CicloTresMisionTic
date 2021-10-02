@@ -52,4 +52,23 @@
 }
 
 
+.asd{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    //background: green;
+
+}
+
+.column{
+    width: 98%;
+    
+ 
+    //background: yellow;
+}
+
+.btn-save:hover {
+    transform: scale(1.09);
+}
 
