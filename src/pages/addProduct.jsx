@@ -44,7 +44,7 @@ const AddProduct = () => {
             >
               Precio
               <input
-                className='flex bg-gray-50 border border-indigo-900 p-2 rounded-lg m-2'
+                className='flex bg-gray-50 border border-blue-900 p-2 rounded-lg m-2'
                 name='precio'
                 type='text'
                 placeholder='Precio'
