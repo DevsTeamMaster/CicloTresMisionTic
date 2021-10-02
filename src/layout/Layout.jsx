@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
           <div class="header__container">
             <img src={imagenUsuario} alt="" class="header__img" />
 
-            <Link class="header__logo">DevsTeamMaster</Link>
+            <Link to="#" class="header__logo">DevsTeamMaster</Link>
 
             <div class="header__search">
               <input type="search" placeholder="Search" class="header__input" />
