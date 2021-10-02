@@ -1,0 +1,28 @@
+.breedCard {
+    margin: 10px;
+    background-color: rgba(247, 23, 23, 0);
+    box-shadow: 3px 5px 3px rgb(190, 184, 184);
+    border-radius: 10px;
+}
+
+.breedTitle {
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.priceValue {
+    color: rgb(139, 136, 136);
+    margin: 10px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.contenedorImagen {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
