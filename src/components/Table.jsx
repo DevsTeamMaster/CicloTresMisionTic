@@ -18,6 +18,7 @@ import { classNames } from 'utils/Utils';
 import { SortIcon, SortUpIcon, SortDownIcon } from 'utils/Icons';
 import { Button, PageButton } from 'utils/Button';
 
+
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -85,20 +86,38 @@ export function SelectColumnFilter({
   );
 }
 
+
 export function StatusPill({ value }) {
   const status = value ? value.toLowerCase() : 'unknown';
 
   return (
-    <span
-      className={classNames(
-        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm',
-        status.startsWith('Pendiente') ? 'bg-green-100 text-green-800' : null,
-        status.startsWith('inactive') ? 'bg-yellow-100 text-yellow-800' : null,
-        status.startsWith('offline') ? 'bg-red-100 text-red-800' : null
-      )}
-    >
-      {status}
-    </span>
+    <select
+         className={classNames(
+        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
+        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
+        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
+        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
+      )}> 
+      <option   className={classNames(
+        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
+        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
+        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
+        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
+      )}>{status}
+      </option>
+       <option   className={classNames(
+        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
+        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
+        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
+        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
+      )}>No Autorizado</option>
+      <option   className={classNames(
+        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
+        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
+        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
+        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
+      )}>Autorizado</option>
+    </select>
   );
 }
 

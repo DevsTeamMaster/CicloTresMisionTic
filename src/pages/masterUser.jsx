@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from 'components/Table'
+import Table, { AvatarCell, SelectColumnFilter, StatusPill } from 'components/Table'
 import 'styles/maestroUsuario.scss'
 
 const getData = () => {
@@ -65,6 +65,7 @@ const MasterUser = () => {
           {
             Header: 'Email',
             accessor: 'email',
+            
           },
           {
             Header: 'Rol',
@@ -73,6 +74,7 @@ const MasterUser = () => {
           {
             Header: 'Estado',
             accessor: 'status',
+            Cell: StatusPill,
           },
           {
             Header: 'Actualizar Rol',
