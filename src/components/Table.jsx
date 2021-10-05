@@ -1,24 +1,14 @@
 import React from 'react';
-
 import {
   useTable,
+  useState,
   useFilters,
-  useGlobalFilter,
   useAsyncDebounce,
-  useSortBy,
+  useGlobalFilter,
   usePagination,
 } from 'react-table';
-import {
-  ChevronDoubleLeftIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronDoubleRightIcon,
-} from '@heroicons/react/solid';
-import { classNames } from 'utils/Utils';
-import { SortIcon, SortUpIcon, SortDownIcon } from 'utils/Icons';
-import { Button, PageButton } from 'utils/Button';
 
-
+//Take it from https://react-table.tanstack.com/docs/api/useFilters
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -31,103 +21,30 @@ function GlobalFilter({
   }, 200);
 
   return (
-    <label className='flex gap-x-2 items-baseline'>
-      <span className='text-gray-700'>Search: </span>
+    <span className='text-xl'>
+      Buscar:{' '}
       <input
-        type='text'
-        className='rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+        className='p-1 ml-2 text-lg border rounded-md border-purple-900 shadow-sm focus:border-porple-900 focus:ring focus:ring-purple-800'
         value={value || ''}
         onChange={(e) => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={`${count} records...`}
+        placeholder={`${count} registros...`}
       />
-    </label>
-  );
-}
-
-// This is a custom filter UI for selecting
-// a unique option from a list
-export function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id, render },
-}) {
-  // Calculate the options for filtering
-  // using the preFilteredRows
-  const options = React.useMemo(() => {
-    const options = new Set();
-    preFilteredRows.forEach((row) => {
-      options.add(row.values[id]);
-    });
-    return [...options.values()];
-  }, [id, preFilteredRows]);
-
-  // Render a multi-select box
-  return (
-    <label className='flex gap-x-2 items-baseline'>
-      <span className='text-gray-700'>{render('Header')}: </span>
-      <select
-        className='rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
-        name={id}
-        id={id}
-        value={filterValue}
-        onChange={(e) => {
-          setFilter(e.target.value || undefined);
-        }}
-      >
-        <option value=''>All</option>
-        {options.map((option, i) => (
-          <option key={i} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-
-export function StatusPill({ value }) {
-  const status = value ? value.toLowerCase() : 'unknown';
-
-  return (
-    <select
-         className={classNames(
-        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
-        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
-        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
-        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
-      )}> 
-      <option   className={classNames(
-        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
-        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
-        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
-        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
-      )}>{status}
-      </option>
-       <option   className={classNames(
-        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
-        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
-        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
-        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
-      )}>No Autorizado</option>
-      <option   className={classNames(
-        'px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm ',
-        status.startsWith('pendiente') ? 'bg-green-100 text-green-800 ' : null,
-        status.startsWith('autorizado') ? 'bg-yellow-100 text-yellow-800 ' : null,
-        status.startsWith('no autorizado') ? 'bg-red-100 text-red-800' : null
-      )}>Autorizado</option>
-    </select>
+    </span>
   );
 }
 
 function Table({ columns, data }) {
+  // Use the useTable Hook to send the columns and data to build the table
+
   const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    prepareRow,
-    page,
+    getTableProps, // table props from react-table
+    getTableBodyProps, // table body props from react-table
+    headerGroups, // headerGroups, if your table has groupings
+    rows, // rows for the table based on the data passed
+    prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
 
     canPreviousPage,
     canNextPage,
@@ -136,7 +53,7 @@ function Table({ columns, data }) {
     gotoPage,
     nextPage,
     previousPage,
-    setPageSize,
+    pageIndex,
 
     state,
     preGlobalFilteredRows,
@@ -146,96 +63,66 @@ function Table({ columns, data }) {
       columns,
       data,
     },
-    useFilters,
-    useGlobalFilter,
-    useSortBy,
-    usePagination
+    useFilters, // Adding the useFilters Hook to the table
+    useGlobalFilter
   );
+
+  /* 
+    Render the UI for your table
+    - react-table doesn't have UI, it's headless. We just need to put the react-table props from the Hooks, and it will do its magic automatically
+  */
 
   return (
     <>
-      {/*Filter*/}
-      <div className='sm:flex sm:gap-x-2'>
+      {/*Global Filter*/}
+      <div>
         <GlobalFilter
           preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         />
-        {headerGroups.map((headerGroup) =>
-          headerGroup.headers.map((column) =>
-            column.Filter ? (
-              <div className='mt-2 sm:mt-0' key={column.id}>
-                {column.render('Filter')}
-              </div>
-            ) : null
-          )
-        )}
       </div>
-      {/* table */}
+      {/*Table*/}
       <div className='mt-4 flex flex-col'>
         <div className='-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8'>
           <div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-            <div className='shadow overflow-hidden border-b border-blue-900 sm:rounded-lg'>
+            <div className='shadow overflow-hidden border-b border-purple-900 sm:rounded-lg'>
               <table
                 {...getTableProps()}
-                className='min-w-full divide-y divide-gray-200'
+                className='min-w-full divide-y divide-blue-900'
               >
-                <thead className='bg-gray-100'>
+                <thead className='bg-purple-900'>
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
-                        // Add the sorting props to control sorting. For this example
-                        // we can add them into the header props
                         <th
-                          scope='col'
-                          className='group px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider'
-                          {...column.getHeaderProps(
-                            column.getSortByToggleProps()
-                          )}
+                          className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'
+                          {...column.getHeaderProps()}
                         >
-                          <div className='flex items-center justify-between'>
-                            {column.render('Header')}
-                            {/* Add a sort direction indicator */}
-                            <span>
-                              {column.isSorted ? (
-                                column.isSortedDesc ? (
-                                  <SortDownIcon className='w-4 h-4 text-gray-400' />
-                                ) : (
-                                  <SortUpIcon className='w-4 h-4 text-gray-400' />
-                                )
-                              ) : (
-                                <SortIcon className='w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100' />
-                              )}
-                            </span>
-                          </div>
+                          {column.render('Header')}
                         </th>
                       ))}
                     </tr>
                   ))}
                 </thead>
                 <tbody
-                  {...getTableBodyProps()}
-                  className='bg-white divide-y divide-gray-200'
+                  className='bg-white divide-y divide-purple-200'
+                  {...getTableBodyProps}
                 >
-                  {page.map((row, i) => {
-                    // new
+                  {rows.map((row, i) => {
+                    // This line is necessary to prepare the rows and get the row props from react-table dynamically
+
+                    // Each row can be rendered directly as a string using the react-table render method
                     prepareRow(row);
                     return (
                       <tr {...row.getRowProps()}>
                         {row.cells.map((cell) => {
                           return (
                             <td
-                              {...cell.getCellProps()}
                               className='px-6 py-4 whitespace-nowrap'
-                              role='cell'
+                              {...cell.getCellProps()}
                             >
-                              {cell.column.Cell.name === 'defaultRenderer' ? (
-                                <div className='text-sm text-gray-500'>
-                                  {cell.render('Cell')}
-                                </div>
-                              ) : (
-                                cell.render('Cell')
-                              )}
+                              {cell.render('Cell')}
                             </td>
                           );
                         })}
@@ -248,86 +135,28 @@ function Table({ columns, data }) {
           </div>
         </div>
       </div>
-      {/* Pagination */}
-      <div className='py-3 flex items-center justify-between'>
-        <div className='flex-1 flex justify-between sm:hidden'>
-          <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            Previous
-          </Button>
-          <Button onClick={() => nextPage()} disabled={!canNextPage}>
-            Next
-          </Button>
-        </div>
-        <div className='hidden sm:flex-1 sm:flex sm:items-center sm:justify-between'>
-          <div className='flex gap-x-2 items-baseline'>
-            <span className='text-sm text-gray-700'>
-              Page <span className='font-medium'>{state.pageIndex + 1}</span> of{' '}
-              <span className='font-medium'>{pageOptions.length}</span>
-            </span>
-            <label>
-              <span className='sr-only'>Items Per Page</span>
-              <select
-                className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
-                value={state.pageSize}
-                onChange={(e) => {
-                  setPageSize(Number(e.target.value));
-                }}
-              >
-                {[5, 10, 20].map((pageSize) => (
-                  <option key={pageSize} value={pageSize}>
-                    Show {pageSize}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div>
-            <nav
-              className='relative z-0 inline-flex rounded-md shadow-sm -space-x-px'
-              aria-label='Pagination'
-            >
-              <PageButton
-                className='rounded-l-md'
-                onClick={() => gotoPage(0)}
-                disabled={!canPreviousPage}
-              >
-                <span className='sr-only'>First</span>
-                <ChevronDoubleLeftIcon
-                  className='h-5 w-5 text-gray-400'
-                  aria-hidden='true'
-                />
-              </PageButton>
-              <PageButton
-                onClick={() => previousPage()}
-                disabled={!canPreviousPage}
-              >
-                <span className='sr-only'>Previous</span>
-                <ChevronLeftIcon
-                  className='h-5 w-5 text-gray-400'
-                  aria-hidden='true'
-                />
-              </PageButton>
-              <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
-                <span className='sr-only'>Next</span>
-                <ChevronRightIcon
-                  className='h-5 w-5 text-gray-400'
-                  aria-hidden='true'
-                />
-              </PageButton>
-              <PageButton
-                className='rounded-r-md'
-                onClick={() => gotoPage(pageCount - 1)}
-                disabled={!canNextPage}
-              >
-                <span className='sr-only'>Last</span>
-                <ChevronDoubleRightIcon
-                  className='h-5 w-5 text-gray-400'
-                  aria-hidden='true'
-                />
-              </PageButton>
-            </nav>
-          </div>
-        </div>
+      {/*Pagination*/}
+      <div className='flex justify-end mt-3'>
+        <button
+          className='fas fa-angle-double-left fa-2x fa-border fa-rounded-lg hover:bg-gray-100'
+          onClick={() => gotoPage()}
+          disabled={!canPreviousPage}
+        ></button>
+        <button
+          className='fas fa-angle-left fa-2x fa-border hover:bg-gray-100'
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        ></button>
+        <button
+          className='fas fa-angle-right fa-2x fa-border hover:bg-gray-100'
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        ></button>
+        <button
+          className='fas fa-angle-double-right fa-2x fa-border hover:bg-gray-100'
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        ></button>
       </div>
     </>
   );
