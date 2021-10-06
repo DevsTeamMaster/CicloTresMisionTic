@@ -21,7 +21,7 @@ function GlobalFilter({
   }, 200);
 
   return (
-    <span className='text-xl'>
+    <span className='flex text-xl'>
       Buscar:{' '}
       <input
         className='p-1 ml-2 text-lg border rounded-md border-purple-900 shadow-sm focus:border-porple-900 focus:ring focus:ring-purple-800'
@@ -43,7 +43,7 @@ function Table({ columns, data }) {
     getTableProps, // table props from react-table
     getTableBodyProps, // table body props from react-table
     headerGroups, // headerGroups, if your table has groupings
-    rows, // rows for the table based on the data passed
+    page,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
 
     canPreviousPage,
@@ -53,7 +53,7 @@ function Table({ columns, data }) {
     gotoPage,
     nextPage,
     previousPage,
-    pageIndex,
+    setPageSize,
 
     state,
     preGlobalFilteredRows,
@@ -64,7 +64,8 @@ function Table({ columns, data }) {
       data,
     },
     useFilters, // Adding the useFilters Hook to the table
-    useGlobalFilter
+    useGlobalFilter,
+    usePagination
   );
 
   /* 
@@ -89,7 +90,7 @@ function Table({ columns, data }) {
             <div className='shadow overflow-hidden border-b border-purple-900 sm:rounded-lg'>
               <table
                 {...getTableProps()}
-                className='min-w-full divide-y divide-blue-900'
+                className='min-w-full  divide-y divide-blue-900'
               >
                 <thead className='bg-purple-900'>
                   {headerGroups.map((headerGroup) => (
@@ -109,7 +110,7 @@ function Table({ columns, data }) {
                   className='bg-white divide-y divide-purple-200'
                   {...getTableBodyProps}
                 >
-                  {rows.map((row, i) => {
+                  {page.map((row, i) => {
                     // This line is necessary to prepare the rows and get the row props from react-table dynamically
 
                     // Each row can be rendered directly as a string using the react-table render method
@@ -136,27 +137,35 @@ function Table({ columns, data }) {
         </div>
       </div>
       {/*Pagination*/}
-      <div className='flex justify-end mt-3'>
-        <button
-          className='fas fa-angle-double-left fa-2x fa-border fa-rounded-lg hover:bg-gray-100'
-          onClick={() => gotoPage()}
-          disabled={!canPreviousPage}
-        ></button>
-        <button
-          className='fas fa-angle-left fa-2x fa-border hover:bg-gray-100'
-          onClick={() => previousPage()}
-          disabled={!canPreviousPage}
-        ></button>
-        <button
-          className='fas fa-angle-right fa-2x fa-border hover:bg-gray-100'
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-        ></button>
-        <button
-          className='fas fa-angle-double-right fa-2x fa-border hover:bg-gray-100'
-          onClick={() => gotoPage(pageCount - 1)}
-          disabled={!canNextPage}
-        ></button>
+      <div className='flex justify-between mt-3'>
+        <div>
+          <span className='text-lg text-gray-700'>
+            Página <span>{state.pageIndex + 1}</span> de{' '}
+            <span>{pageOptions.length}</span>
+          </span>
+        </div>
+        <div>
+          <button
+            className='fas fa-angle-double-left fa-2x fa-border fa-rounded-lg hover:bg-gray-100'
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}
+          ></button>
+          <button
+            className='fas fa-angle-left fa-2x fa-border hover:bg-gray-100'
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+          ></button>
+          <button
+            className='fas fa-angle-right fa-2x fa-border hover:bg-gray-100'
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+          ></button>
+          <button
+            className='fas fa-angle-double-right fa-2x fa-border hover:bg-gray-100'
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          ></button>
+        </div>
       </div>
     </>
   );
