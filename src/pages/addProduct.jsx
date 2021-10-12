@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import 'styles/addProduct.scss';
-
-const AddProduct = () => {
-=======
 import React, { useState, useRef } from 'react';
 import { createProducts } from '../utils/api';
 import 'styles/addProduct.scss';
@@ -26,7 +20,6 @@ const AddProduct = () => {
     createProducts(newProduct);
   };
 
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
   return (
     <div className='product-container'>
       <div className='flex flex-col h-screen items-center justify-center  rounded-3xl mt-5 ml-5 product-div'>
@@ -34,12 +27,6 @@ const AddProduct = () => {
           <h1 className='flex justify-center font-bold text-2xl text-gray-800'>
             Agregar producto
           </h1>
-<<<<<<< HEAD
-          <form className='flex flex-col my-10'>
-            <label
-              className='flex flex-col font-bold text-gray-800'
-              htmlFor='código'
-=======
           <form
             ref={form}
             onSubmit={submitForm}
@@ -48,18 +35,12 @@ const AddProduct = () => {
             <label
               className='flex flex-col font-bold text-gray-800'
               htmlFor='idProduct'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
             >
               Código producto
               <input
                 className='flex bg-gray-50 border border-blue-900 p-2 rounded-lg m-2'
-<<<<<<< HEAD
-                name='código'
-                type='text'
-=======
                 name='idProduct'
                 type='number'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
                 placeholder='SKU'
                 required
               ></input>
@@ -67,20 +48,12 @@ const AddProduct = () => {
 
             <label
               className='flex flex-col font-bold text-gray-800'
-<<<<<<< HEAD
-              htmlFor='descripción'
-=======
               htmlFor='description'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
             >
               Descripción
               <input
                 className='flex bg-gray-50 border border-blue-900 p-2 rounded-lg m-2'
-<<<<<<< HEAD
-                name='descripción'
-=======
                 name='description'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
                 type='text'
                 placeholder='Descripción'
                 required
@@ -89,54 +62,18 @@ const AddProduct = () => {
 
             <label
               className='flex flex-col font-bold text-gray-800'
-<<<<<<< HEAD
-              htmlFor='precio'
-=======
               htmlFor='price'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
             >
               Precio
               <input
                 className='flex bg-gray-50 border border-blue-900 p-2 rounded-lg m-2'
-<<<<<<< HEAD
-                name='precio'
-                type='text'
-=======
                 name='price'
                 type='number'
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
                 placeholder='Precio'
                 required
               ></input>
             </label>
 
-<<<<<<< HEAD
-            <h3 className='flex my-5 justify-center font-bold text-gray-800'>
-              Estado
-            </h3>
-            <div className='flex justify-between'>
-              <label className='ml-10 text-gray-800' htmlFor='activo'>
-                Activo
-                <input
-                  className='m-3'
-                  name='activo'
-                  type='checkbox'
-                  placeholder='Estado'
-                  required
-                ></input>
-              </label>
-              <label className='text-gray-800' htmlFor='inactivo'>
-                Inactivo
-                <input
-                  className='m-3 mr-10'
-                  name='inactivo'
-                  type='checkbox'
-                  placeholder='Estado'
-                  required
-                ></input>
-              </label>
-            </div>
-=======
             <label
               className='flex flex-col font-bold text-gray-800'
               htmlFor='quantity'
@@ -188,7 +125,6 @@ const AddProduct = () => {
                 ></input>
               </label>
             </div>*/}
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
 
             <div className='flex flex-col items-end '>
               <button
@@ -197,10 +133,7 @@ const AddProduct = () => {
               >
                 Agregar
               </button>
-<<<<<<< HEAD
-=======
               <ToastContainer position='bottom-center' autoClose={5000} />
->>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
             </div>
           </form>
         </div>
