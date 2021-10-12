@@ -64,7 +64,16 @@ function App() {
 
       <Router>
         <Switch>
-          <Route path={['/AddSales', '/AddProduct','/MasterUser','/IntMastProd','/MasterSales','/MasterProducts']}>
+          <Route
+            path={[
+              '/AddSales',
+              '/AddProduct',
+              '/MasterUser',
+              '/IntMastProd',
+              '/MasterSales',
+              '/MasterProducts',
+            ]}
+          >
             <Layout>
               <Switch>
                 <Route path='/AddSales'>
@@ -75,7 +84,7 @@ function App() {
                 </Route>
                 <Route path='/MasterUser'>
                   <MasterUser />
-                </Route>             
+                </Route>
                 <Route path='/IntMastProd'>
                   <IntMastProd />
                 </Route>
@@ -84,7 +93,7 @@ function App() {
                 </Route>
                 <Route path='/MasterProducts'>
                   <MasterProducts />
-                </Route>          
+                </Route>
               </Switch>
             </Layout>
           </Route>
