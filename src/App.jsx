@@ -64,7 +64,20 @@ function App() {
 
       <Router>
         <Switch>
+<<<<<<< HEAD
           <Route path={['/AddSales', '/AddProduct','/MasterUser','/IntMastProd','/MasterSales','/MasterProducts']}>
+=======
+          <Route
+            path={[
+              '/AddSales',
+              '/AddProduct',
+              '/MasterUser',
+              '/IntMastProd',
+              '/MasterSales',
+              '/MasterProducts',
+            ]}
+          >
+>>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
             <Layout>
               <Switch>
                 <Route path='/AddSales'>
@@ -75,7 +88,11 @@ function App() {
                 </Route>
                 <Route path='/MasterUser'>
                   <MasterUser />
+<<<<<<< HEAD
                 </Route>             
+=======
+                </Route>
+>>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
                 <Route path='/IntMastProd'>
                   <IntMastProd />
                 </Route>
@@ -84,7 +101,11 @@ function App() {
                 </Route>
                 <Route path='/MasterProducts'>
                   <MasterProducts />
+<<<<<<< HEAD
                 </Route>          
+=======
+                </Route>
+>>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
               </Switch>
             </Layout>
           </Route>

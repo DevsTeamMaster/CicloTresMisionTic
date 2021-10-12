@@ -24,6 +24,10 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-table": "^7.7.0",
+<<<<<<< HEAD
+=======
+    "react-toastify": "^8.0.3",
+>>>>>>> 3b3bdfa28b99b96d5c232e3ca9764bf5a55078c8
     "web-vitals": "^1.0.1"
   },
   "scripts": {
