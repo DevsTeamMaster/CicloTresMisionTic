@@ -106,6 +106,7 @@ function Table({ columns, data }) {
                     </tr>
                   ))}
                 </thead>
+
                 <tbody
                   className='bg-white divide-y divide-purple-200'
                   {...getTableBodyProps}

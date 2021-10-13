@@ -8,6 +8,7 @@ export async function getProducts() {
       method: 'GET',
       url: 'http://localhost:8080/productos',
     });
+    console.log('API connection data', response.data);
     return response;
   } catch (e) {
     console.log(e);
