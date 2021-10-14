@@ -28,13 +28,15 @@ library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (
-    
+
     //Autenticación
 
     <Auth0Provider
     domain="devsteammaster.us.auth0.com"
     clientId="CdudGaNva276IyUNPhusHxSqRkuxAbjb"
-    redirectUri={window.location.origin}
+    redirectUri="http://localhost:3000/admin"    //arranque desde la página de admin
+
+    audience="'api-autenticacion-devsteammaster'"  //linea para ingreso a la Api (Bac)
   >
 
   
