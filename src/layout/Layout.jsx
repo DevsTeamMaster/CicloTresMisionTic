@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import React, { Children } from "react";
 import imagenUsuario from "media/perfil.jpg";
 import { Link } from "react-router-dom";
 import "styles/sales.scss";
 import "styles/styles.scss";
-=======
-import React, { Children } from 'react';
-import imagenUsuario from 'media/perfil.jpg';
-import { Link } from 'react-router-dom';
-import 'styles/sales.scss';
->>>>>>> ed09d315aff0e677be6cd72207fedfe4f131c5bc
 
 import PrivateRoute from 'components/PrivateRoute';
 //import Navbar from 'components/Navbar'
@@ -153,7 +146,6 @@ const Layout = ({ children }) => {
                 </div>
               </div>
 
-<<<<<<< HEAD
             <Link to="/Login" class="nav__link nav__logout">
             <i class="bx bx-log-out nav__icon"> </i>
               <span class="nav__name"><button className="button-logout" onClick={()=>{logout({returnTo: window.location.origin})}}>Log Out</button></span>
@@ -163,15 +155,6 @@ const Layout = ({ children }) => {
         <>
         {children}
         </>
-=======
-              <Link to='/Login' className='nav__link nav__logout'>
-                <i className='bx bx-log-out nav__icon'></i>
-                <span className='nav__name'>Log Out</span>
-              </Link>
-            </nav>
-          </div>
-          <>{children}</>
->>>>>>> ed09d315aff0e677be6cd72207fedfe4f131c5bc
 
           {/*<div className="contenedor-principal">{children}</div> */}
         </div>
