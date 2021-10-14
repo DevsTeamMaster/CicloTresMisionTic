@@ -7,11 +7,12 @@ import lock from 'media/lock.png'
 //Importamos libreria FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 
 function Login() {
-
+  const { loginWithRedirect } = useAuth0(); //se importa esta linea desde aut0-react.js
   return (
     <section className="login"> 
     <div className="box">
@@ -40,12 +41,13 @@ function Login() {
           <div className="boton-padre">
               <div className="btn-hijo">
               
-              <button className="login-btn"> 
-              <Link to="/MasterUser">
+              <button className="login-btn" onClick={() => loginWithRedirect()} //se importa esta linea desde aut0-react.js
+              > 
+              
               <div>
               <span>Login</span>
               </div>
-              </Link>
+              
                 </button>
            
             </div>

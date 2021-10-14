@@ -15,6 +15,7 @@ import IntMastProd from 'pages/intMastProd';
 import MasterSales from 'pages/masterSales';
 import MasterUser from 'pages/masterUser';
 import MasterProducts from 'pages/masterProducts';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 //Libreria FontAwesome
 import ReactDOM from 'react-dom';
@@ -27,6 +28,16 @@ library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (
+    
+    //Autenticación
+
+    <Auth0Provider
+    domain="devsteammaster.us.auth0.com"
+    clientId="CdudGaNva276IyUNPhusHxSqRkuxAbjb"
+    redirectUri={window.location.origin}
+  >
+
+  
     <div className='App'>
       {/*<Router>
         <Switch>
@@ -110,6 +121,8 @@ function App() {
         </Switch>
       </Router>
     </div>
+  </Auth0Provider>
+  
   );
 }
 export default App;
