@@ -99,7 +99,7 @@ const MasterUser = () => {
           </div>
           <div className='container-eye'>
             <button className='btn-save'>
-              <i class='far fa-save'></i>
+              <i className='far fa-save'></i>
             </button>
           </div>
         </div>
