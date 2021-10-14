@@ -2,10 +2,13 @@ import React, { Children } from "react";
 import imagenUsuario from "media/perfil.jpg";
 import { Link } from "react-router-dom";
 import "styles/sales.scss";
+
+import PrivateRoute from "components/PrivateRoute";
 //import Navbar from 'components/Navbar'
 
 const Layout = ({ children }) => {
   return (
+    <PrivateRoute>
     <div>
       <div className="body">
         <header class="header">
@@ -142,6 +145,8 @@ const Layout = ({ children }) => {
         {/*<div className="contenedor-principal">{children}</div> */}
       </div>
     </div>
+    </PrivateRoute>
+
   );
 };
 
