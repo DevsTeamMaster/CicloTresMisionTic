@@ -3,60 +3,6 @@ import Table from '../components/Table';
 import { getProducts } from '../utils/api';
 import 'styles/maestroUsuario.scss';
 
-const getData = () => {
-  const data = [
-    {
-      codigo: '2364',
-      descripcion: 'Linterna',
-      precio: '10.000',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      codigo: '3487',
-      descripcion: 'Nevera',
-      precio: '1.160.245',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      codigo: '3322 ',
-      descripcion: 'Televisor',
-      precio: '2.000.000',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      codigo: '8609',
-      descripcion: 'Equipo de Sonido',
-      precio: '400.000',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      codigo: '4823',
-      descripcion: 'Bafle',
-      precio: '150.000',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      codigo: '5856',
-      descripcion: 'Ventilador',
-      precio: '89.990',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-  ];
-  return [...data];
-};
-
 const MasterProducts = () => {
   const [products, setProducts] = useState([]);
 
@@ -64,23 +10,23 @@ const MasterProducts = () => {
     () => [
       {
         Header: 'Código Producto',
-        accessor: 'codigo',
+        accessor: 'idProducto',
       },
       {
         Header: 'Descripción',
-        accessor: 'descripcion',
+        accessor: 'descripcion_producto',
       },
       {
         Header: 'Precio',
-        accessor: 'precio',
+        accessor: 'precio_producto',
       },
       {
         Header: 'Inventario',
-        accessor: 'inventario',
+        accessor: 'cantidad_producto',
       },
       {
         Header: 'Estado',
-        accessor: 'estado',
+        accessor: 'idEstado',
       },
     ],
     []
@@ -97,8 +43,6 @@ const MasterProducts = () => {
     //Con los corchetes le decimos a react que sólo ejecute el useEffect cada vez que re actualice el componente
   }, []);
 
-  const data = React.useMemo(() => getData());
-
   return (
     <div className='product-container-usu'>
       <div className='rounded-3xl ml-5 mt-5 product-div-usu'>
@@ -108,7 +52,7 @@ const MasterProducts = () => {
           </div>
           <div className='container-eye'>
             <button className='btn-save'>
-              <i class='far fa-save'></i>
+              <i className='far fa-save'></i>
             </button>
           </div>
         </div>
