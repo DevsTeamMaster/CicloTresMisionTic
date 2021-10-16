@@ -76,14 +76,15 @@ const MasterUser = () => {
         accessor: 'status',
         //Cell: StatusPill,
       },
-      {
+      /*{
         Header: 'Actualizar Rol',
         accessor: 'nombreVendedor',
       },
       {
         Header: 'Actualizar Estado',
         accessor: 'totalVenta',
-      },
+      },*/
+
     ],
     []
   );
@@ -99,7 +100,7 @@ const MasterUser = () => {
           </div>
           <div className='container-eye'>
             <button className='btn-save'>
-              <i className='far fa-save'></i>
+              <i class='far fa-save'></i>
             </button>
           </div>
         </div>

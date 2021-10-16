@@ -15,6 +15,7 @@ const PrivateRoute = ({ children }) => {
         audience: 'https://emp-devsteammaster.us.auth0.com/userinfo',
       });
       localStorage.setItem('token', accessToken);
+      console.log(accessToken);
       
     };
     if (isAuthenticated) {
