@@ -3,8 +3,11 @@ import 'styles/maestroUsuario.scss';
 import { Link } from 'react-router-dom';
 import "styles/navBar.scss";
 import "index.js";
+import { useEffect } from 'react';
 
 const PrivateRoute = ({ children }) => {
+
+ 
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) return <div>Loading ...</div>;

@@ -148,7 +148,7 @@ const Layout = ({ children }) => {
 
             <Link to="/Login" class="nav__link nav__logout">
             <i class="bx bx-log-out nav__icon"> </i>
-              <span class="nav__name"><button className="button-logout" onClick={()=>{logout({returnTo: window.location.origin})}}>Log Out</button></span>
+              <span class="nav__name"><button className="button-logout" onClick={()=>{logout({returnTo: "http://localhost:3000/login"})}}>Log Out</button></span>
             </Link>
           </nav>
         </div>

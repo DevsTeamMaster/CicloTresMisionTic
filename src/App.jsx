@@ -27,11 +27,10 @@ function App() {
     //Autenticación
 
     <Auth0Provider
-    domain="devsteammaster.us.auth0.com"
-    clientId="CdudGaNva276IyUNPhusHxSqRkuxAbjb"
-    redirectUri="http://localhost:3000/admin"    //arranque desde la página de admin
-
-    audience="'api-autenticacion-devsteammaster'"  //linea para ingreso a la Api (Bac)
+    domain="emp-devsteammaster.us.auth0.com"
+    clientId="ve8Y6YiwVNlqq0zC0F6TEoZUrcp7GBie"
+    redirectUri="http://localhost:3000/addSales"    //arranque desde la página de login
+    audience="https://emp-devsteammaster.us.auth0.com/userinfo"  //linea para ingreso a la Api (Bac)
   >
 
   
