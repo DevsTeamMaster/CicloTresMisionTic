@@ -2,11 +2,14 @@ import React, { Children } from 'react';
 import imagenUsuario from 'media/perfil.jpg';
 import { Link } from 'react-router-dom';
 import 'styles/sales.scss';
+import 'styles/styles.scss';
 
 import PrivateRoute from 'components/PrivateRoute';
 //import Navbar from 'components/Navbar'
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Layout = ({ children }) => {
+  const { logout } = useAuth0();
   return (
     <PrivateRoute>
       <div>
@@ -143,9 +146,18 @@ const Layout = ({ children }) => {
                 </div>
               </div>
 
-              <Link to='/Login' className='nav__link nav__logout'>
-                <i className='bx bx-log-out nav__icon'></i>
-                <span className='nav__name'>Log Out</span>
+              <Link to='/Login' class='nav__link nav__logout'>
+                <i class='bx bx-log-out nav__icon'> </i>
+                <span class='nav__name'>
+                  <button
+                    className='button-logout'
+                    onClick={() => {
+                      logout({ returnTo: 'http://localhost:3000/login' });
+                    }}
+                  >
+                    Log Out
+                  </button>
+                </span>
               </Link>
             </nav>
           </div>

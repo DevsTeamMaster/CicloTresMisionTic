@@ -7,26 +7,15 @@ import { useEffect } from 'react';
 
 const PrivateRoute = ({ children }) => {
 
-  const { isAuthenticated, isLoading, loginwithRedirect,  getAccessTokenSilently} = useAuth0();
-  
-  useEffect(() => {
-    const fetchAuth0Token = async () => {
-      const accessToken = await getAccessTokenSilently({
-        audience: 'https://emp-devsteammaster.us.auth0.com/userinfo',
-      });
-      localStorage.setItem('token', accessToken);
-      
-    };
-    if (isAuthenticated) {
-        fetchAuth0Token();        }   
-  }, [isAuthenticated, getAccessTokenSilently])
-  
-  //const { isAuthenticated, isLoading } = useAuth0();
+ 
+  const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) return <div>Loading ...</div>;
 
-  if (!isAuthenticated){
-    return (<div>
+  
+
+  return isAuthenticated ? <>{children}</>:(
+    <div>
       <div className="body">
         <header class="header">
           <div class="header__container">
@@ -68,12 +57,8 @@ const PrivateRoute = ({ children }) => {
        {/* <div className="contenedor-principal"></div> 
         */} 
       </div>
-    </div>);
-    
-    
-      
-  }else{ return <>{children}</>;} 
-
+    </div>
+    );
 };
 
 export default PrivateRoute;

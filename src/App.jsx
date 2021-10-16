@@ -23,13 +23,14 @@ library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (
-    
+
     //Autenticación
 
     <Auth0Provider
-    domain="devsteammaster.us.auth0.com"
-    clientId="CdudGaNva276IyUNPhusHxSqRkuxAbjb"
-    redirectUri={window.location.origin}
+    domain="emp-devsteammaster.us.auth0.com"
+    clientId="ve8Y6YiwVNlqq0zC0F6TEoZUrcp7GBie"
+    redirectUri="http://localhost:3000/addSales"    //arranque desde la página de login
+    audience="https://emp-devsteammaster.us.auth0.com/userinfo"  //linea para ingreso a la Api (Bac)
   >
 
   
