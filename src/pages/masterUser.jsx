@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Table, {
   AvatarCell,
   SelectColumnFilter,
@@ -8,8 +8,6 @@ import 'styles/maestroUsuario.scss';
 import { getUsers } from '../utils/api';
 
 const MasterUser = () => {
-
-
   const [user, setUsers] = useState([]);
 
   const columns = React.useMemo(
@@ -25,7 +23,6 @@ const MasterUser = () => {
       {
         Header: 'Estado',
         accessor: 'idEstado',
-      
       },
     ],
     []
@@ -42,7 +39,6 @@ const MasterUser = () => {
     //Con los corchetes le decimos a react que sólo ejecute el useEffect cada vez que re actualice el componente
   }, []);
 
-
   return (
     <div className='product-container-usu'>
       <div className='rounded-3xl ml-5 mt-5 product-div-usu'>
@@ -52,7 +48,7 @@ const MasterUser = () => {
           </div>
           <div className='container-eye'>
             <button className='btn-save'>
-              <i class='far fa-save'></i>
+              <i className='far fa-save'></i>
             </button>
           </div>
         </div>

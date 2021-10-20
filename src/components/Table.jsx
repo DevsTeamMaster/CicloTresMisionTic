@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   useTable,
   useFilters,
@@ -38,33 +38,19 @@ function GlobalFilter({
 function Table({ columns, data }) {
   const [mostrarTabla, setMostrarTabla] = useState(true);
 
-  useEffect(()=>{
+  useEffect(() => {}, [mostrarTabla]);
 
+  const TablaVehiculos = () => {
+    return <div></div>;
+  };
 
-}, [mostrarTabla])
+  const FormularioCreacionVehiculos = () => {
+    const [email, setEmail] = useState();
+    const [rol, setRol] = useState();
+    const [estado, setEstado] = useState();
 
-const TablaVehiculos = () =>{
-  return(
-      <div>
-
-      </div>
-  );
-};
-
-const FormularioCreacionVehiculos = () => {
-  const [email, setEmail] = useState();
-  const [rol, setRol] = useState();
-  const [estado, setEstado] = useState();
-
-
-  return(
-      <div>
-         
-
-      </div>
-  );
-};
-
+    return <div></div>;
+  };
 
   // Use the useTable Hook to send the columns and data to build the table
 
@@ -102,7 +88,8 @@ const FormularioCreacionVehiculos = () => {
     - react-table doesn't have UI, it's headless. We just need to put the react-table props from the Hooks, and it will do its magic automatically
   */
 
- {/*  const filaEditar = ()=>{
+  {
+    /*  const filaEditar = ()=>{
     return
       <td
       className='px-6 py-4 whitespace-nowrap'
@@ -111,8 +98,8 @@ const FormularioCreacionVehiculos = () => {
       {cell.render('Cell')}
       <input placeholder='nombre' />
     </td>
-  }*/}
-
+  }*/
+  }
 
   return (
     <>
@@ -137,20 +124,19 @@ const FormularioCreacionVehiculos = () => {
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
-                        
                         <th
                           className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'
                           {...column.getHeaderProps()}
                         >
                           {column.render('Header')}
-                         
-                        </th>                
-                      ))}  
-                      <th  className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
+                        </th>
+                      ))}
+                      <th className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
                         Editar
                       </th>
-                    <th  className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>Eliminar</th>
-                    
+                      <th className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
+                        Eliminar
+                      </th>
                     </tr>
                   ))}
                 </thead>
@@ -172,21 +158,34 @@ const FormularioCreacionVehiculos = () => {
                               {...cell.getCellProps()}
                             >
                               {cell.render('Cell')}
-                              <input className="hidden" placeholder='nombre' />
+                              <input className='hidden' placeholder='nombre' />
                             </td>
                           );
                         })}
-                        <td  className='px-6 py-4 whitespace-nowrap flex '>
-                          <div className=" editar-icon">
-                            <button onClick = {()=>{setMostrarTabla(!mostrarTabla)}} type="button" class="btn btn-outline-primary"><i className="far fa-edit text-yellow-700 hover:text-yellow-500"></i></button></div>
-                            {mostrarTabla ? (<TablaVehiculos  /> )
-                              :( <FormularioCreacionVehiculos/>)} 
+                        <td className='px-6 py-4 whitespace-nowrap flex '>
+                          <div className=' editar-icon'>
+                            <button
+                              onClick={() => {
+                                setMostrarTabla(!mostrarTabla);
+                              }}
+                              type='button'
+                              className='btn btn-outline-primary'
+                            >
+                              <i className='far fa-edit text-yellow-700 hover:text-yellow-500'></i>
+                            </button>
+                          </div>
+                          {mostrarTabla ? (
+                            <TablaVehiculos />
+                          ) : (
+                            <FormularioCreacionVehiculos />
+                          )}
                         </td>
                         <td className='px-6 py-4 whitespace-nowrap'>
-                          <div className="editar-icon"><i class="fas fa-trash text-red-500 hover:text-red-700"></i></div>
+                          <div className='editar-icon'>
+                            <i className='fas fa-trash text-red-500 hover:text-red-700'></i>
+                          </div>
                         </td>
                       </tr>
-                      
                     );
                   })}
                 </tbody>
@@ -196,14 +195,12 @@ const FormularioCreacionVehiculos = () => {
         </div>
       </div>
 
-      
       {/*Pagination*/}
       <div className='flex justify-between mt-3'>
         <div>
           <span className='text-lg text-gray-700'>
             Página <span>{state.pageIndex + 1}</span> de{' '}
             <span>{pageOptions.length}</span>
-            
           </span>
         </div>
         <div>

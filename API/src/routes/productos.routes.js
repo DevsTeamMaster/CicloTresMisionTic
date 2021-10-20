@@ -6,13 +6,21 @@ const mysqlConnection = require('../../db/db');
 //GET ALL
 router.get('/productos', (req, res) => {
   //query = consulta
-  mysqlConnection.query('SELECT * FROM Productos', (err, rows, fields) => {
-    if (!err) {
-      res.json(rows);
-    } else {
-      console.log(err);
+  mysqlConnection.query(
+    `SELECT idProducto, descripcion_producto, precio_producto, cantidad_producto, idEstado,
+    CASE
+    WHEN idEstado = 1 THEN 'Activo'
+    WHEN idEstado = 0 THEN 'Inactivo'
+    END AS idEstadoToString
+    FROM Productos`,
+    (err, rows, fields) => {
+      if (!err) {
+        res.json(rows);
+      } else {
+        console.log(err);
+      }
     }
-  });
+  );
 });
 
 //GET BY ID

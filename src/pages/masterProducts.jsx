@@ -26,7 +26,7 @@ const MasterProducts = () => {
       },
       {
         Header: 'Estado',
-        accessor: 'idEstado',
+        accessor: 'idEstadoToString',
       },
     ],
     []
