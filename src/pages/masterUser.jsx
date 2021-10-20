@@ -1,66 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Table, {
   AvatarCell,
   SelectColumnFilter,
   StatusPill,
 } from 'components/Table';
 import 'styles/maestroUsuario.scss';
-
-const getData = () => {
-  const data = [
-    {
-      email: 'juandavidguz28@gmail.com',
-      rol: 'Administrador',
-      status: 'Pendiente',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      email: 'fgilp95@gmail.com',
-      rol: 'Vendedor',
-      status: 'Autorizado',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      email: 'joshiecruz@gmail.com ',
-      rol: 'Administrador',
-      status: 'No Autorizado',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      email: 'giovanny_ballen@hotmail.com ',
-      rol: 'Vendedor',
-      status: 'Pendiente',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      email: 'alcides44c@gmail.com ',
-      rol: 'Administrador',
-      status: 'No Autorizado',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-    {
-      email: 'alcides44c@gmail.com ',
-      rol: 'Administrador',
-      status: 'No Autorizado',
-      nombreVendedor: '',
-      actualizarRol: '',
-      actualizarEstado: '',
-    },
-  ];
-  return [...data, ...data];
-};
+import { getUsers } from '../utils/api';
 
 const MasterUser = () => {
+
+
+  const [user, setUsers] = useState([]);
+
   const columns = React.useMemo(
     () => [
       {
@@ -69,26 +20,28 @@ const MasterUser = () => {
       },
       {
         Header: 'Rol',
-        accessor: 'rol',
+        accessor: 'idRol',
       },
       {
         Header: 'Estado',
-        accessor: 'status',
-        //Cell: StatusPill,
-      },
-      {
-        Header: 'Actualizar Rol',
-        accessor: 'nombreVendedor',
-      },
-      {
-        Header: 'Actualizar Estado',
-        accessor: 'totalVenta',
+        accessor: 'idEstado',
+      
       },
     ],
     []
   );
 
-  const data = React.useMemo(() => getData(), []);
+  useEffect(() => {
+    async function loadUsers() {
+      const response = await getUsers();
+      if (response.status === 200) {
+        setUsers(response.data);
+      }
+    }
+    loadUsers();
+    //Con los corchetes le decimos a react que sólo ejecute el useEffect cada vez que re actualice el componente
+  }, []);
+
 
   return (
     <div className='product-container-usu'>
@@ -99,14 +52,14 @@ const MasterUser = () => {
           </div>
           <div className='container-eye'>
             <button className='btn-save'>
-              <i className='far fa-save'></i>
+              <i class='far fa-save'></i>
             </button>
           </div>
         </div>
         <div className='container-reg asd'>
           <div className='column'>
             <div className='mt-7'>
-              <Table columns={columns} data={data} />
+              <Table columns={columns} data={user} />
             </div>
           </div>
         </div>
