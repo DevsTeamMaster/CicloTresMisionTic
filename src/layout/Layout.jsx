@@ -146,9 +146,9 @@ const Layout = ({ children }) => {
                 </div>
               </div>
 
-              <Link to='/Login' class='nav__link nav__logout'>
-                <i class='bx bx-log-out nav__icon'> </i>
-                <span class='nav__name'>
+              <Link to='/Login' className='nav__link nav__logout'>
+                <i className='bx bx-log-out nav__icon'> </i>
+                <span className='nav__name'>
                   <button
                     className='button-logout'
                     onClick={() => {

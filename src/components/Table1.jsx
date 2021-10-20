@@ -105,12 +105,12 @@ function Table({ columns, data }) {
                       ))}
                     </tr>
                   ))}
-                  <th  className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
-                        Editar
-                      </th>
-                    <th  className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>Eliminar</th>
-
-                    
+                  <th className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
+                    Editar
+                  </th>
+                  <th className='group px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider'>
+                    Eliminar
+                  </th>
                 </thead>
 
                 <tbody
@@ -134,9 +134,15 @@ function Table({ columns, data }) {
                             </td>
                           );
                         })}
-                        <td  className='px-6 py-4 whitespace-nowrap flex '>
-                          <div className=" editar-icon">
-                            <button type="button" class="btn btn-outline-primary"><i className="far fa-edit text-yellow-700 hover:text-yellow-500"></i></button></div>    
+                        <td className='px-6 py-4 whitespace-nowrap flex '>
+                          <div className=' editar-icon'>
+                            <button
+                              type='button'
+                              className='btn btn-outline-primary'
+                            >
+                              <i className='far fa-edit text-yellow-700 hover:text-yellow-500'></i>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     );
