@@ -16,7 +16,7 @@ const PrivateRoute = ({ children }) => {
   useEffect(() => {
     const fetchAuth0Token = async () => {
       const accessToken = await getAccessTokenSilently({
-        audience: 'https://emp-devsteammaster.us.auth0.com/userinfo',
+        audience: 'api-autenticacion-devsteammaster',
       });
       localStorage.setItem('token', accessToken);
       console.log(accessToken);

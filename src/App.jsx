@@ -30,7 +30,7 @@ function App() {
     domain="emp-devsteammaster.us.auth0.com"
     clientId="ve8Y6YiwVNlqq0zC0F6TEoZUrcp7GBie"
     redirectUri="http://localhost:3000/addSales"    //arranque desde la página de login
-    audience="https://emp-devsteammaster.us.auth0.com/userinfo"  //linea para ingreso a la Api (Bac)
+    audience="api-autenticacion-devsteammaster"  //linea para ingreso a la Api (Bac)
   >
 
   
