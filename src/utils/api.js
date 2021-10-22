@@ -2,6 +2,11 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+const getToken = () => {
+  return `Bearer ${localStorage.getItem('token')}`;
+};
+
 export async function getProducts() {
   try {
     const response = await axios({
@@ -95,4 +100,16 @@ export const createUsers = async (data) => {
       console.error(error);
       toast.error('Error al crear producto. Intenta de nuevo.');
     });
+};
+
+export const getDataUsers = async (sucessCallBack,errorCallback) => {
+  const options = {
+    method: 'GET',
+    url: 'http://localhost:8080/usuarios/self',
+    headers: { Authorization: getToken(),},
+    
+  };
+  
+
+  await axios.request(options).then(sucessCallBack).catch(errorCallback);
 };

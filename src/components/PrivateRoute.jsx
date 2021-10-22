@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import 'styles/navBar.scss';
 import 'index.js';
 import { useEffect } from 'react';
+import { getDataUsers } from 'utils/api';
 
 const PrivateRoute = ({ children }) => {
   const {
@@ -19,6 +20,13 @@ const PrivateRoute = ({ children }) => {
         audience: 'api-autenticacion-devsteammaster',
       });
       localStorage.setItem('token', accessToken);
+      await getDataUsers(
+        (response)=>{
+        console.log('response',response);
+        },(err)=>{
+          console.log('err',err);
+        }
+      );
       console.log(accessToken);
     };
     if (isAuthenticated) {
